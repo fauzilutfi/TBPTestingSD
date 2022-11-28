@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+    var id = ViewBag.Id;
+}
+
+<h1>Detail</h1>
+<form id="formDetail">
+    <input id='inputId' value="@id" hidden>
+    <div class="form-group">
+        <label for="tipeMaterial">Tipe Material<span style="color:red;">*</span> :</label>
+        <select type="" class="toogle form-control" id="tipeMaterial" required>
+            <option value="" selected>pilih tipe material..</option>
+            <option value="0">Pokok</option>
+            <option value="1">Non Pokok</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="material">Material<span style="color:red;">*</span> :</label>
+        <select class="toogle form-control" id="material" placeholder="pilih material" disabled>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="volume">Volume<span style="color:red;">*</span> :</label>
+        <input class="toogle form-control" id="volume" required>
+    </div>
+    <div class="form-group">
+        <label for="unit">Unit<span style="color:red;">*</span> :</label>
+        <input class="toogle form-control" id="unit" required>
+    </div>
+    <div class="form-group">
+        <label for="statusDisetujui">Tipe Material<span style="color:red;">*</span> :</label>
+        <select type="" class="toogle form-control" id="statusDisetujui" required>
+            <option value="0">Belum disetujui</option>
+            <option value="1">Disetujui</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="tglDiterima">Tanggal Diterima<span style="color:red;">*</span> :</label>
+        <input class="toogle form-control" id="tglDiterima" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <button id="btnBack" onclick="window.history.back()" type="button" class="btn btn-secondary">Back</button>
+        <button id="btnChange" type="button" class="btn btn-success" hidden>Change</button>
+        <button id="btnCancel" type="button" class="btn btn-secondary" hidden>Cancel</button> 
+        <input id="btnSave" type="submit" value="Save" data-id="" class="btn btn-primary">
+    </div>
+</form>
+<script src="~/js/Detail.js"></script>

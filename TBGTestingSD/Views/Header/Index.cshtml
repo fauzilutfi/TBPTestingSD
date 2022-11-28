@@ -1,0 +1,140 @@
+﻿<div class="card">
+    <div class="card-body">
+        <form id='formFilter'>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="">Penyetujuan</label>
+                    </div>
+                    <label class="float-right">:</label>
+                    <div class="col-md-9">
+                        <select type="text" class="form-control" id="fPenyetujuan">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="fAdaDetil" class="">Ada Detil</label>
+                    </div>
+                    <label class="float-right">:</label>
+                    <div class="col-md-9">
+                        <select type="text" class="form-control" id="fAdaDetil">
+                            <option value="">Semua</option>
+                            <option value="ada">Ada</option>
+                            <option value="tidak">Tidak Ada</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="fStatus" class="">Status</label>
+                    </div>
+                    <label class="float-right">:</label>
+                    <div class="col-md-9">
+                        <select type="text" class="form-control" id="fStatus">
+                            <option value="">Semua</option>
+                            <option value="aktif">Aktif</option>
+                            <option value="tidak">Tidak Aktif</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button id="btnReset" type="button" class="btn btn-secondary">Reset Filter</button>
+                <input id="btnFilter" type="submit" value="Search" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <button id="addButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#headerModal">Add New</button>
+            </div>
+            <div class="col-lg-12">
+                <br />
+                <table id="tblHeader" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Kode SPR</th>
+                            <th>Zona</th>
+                            <th>Tujuan SPR</th>
+                            <th>Tanggal SPR</th>
+                            <th>Nama Peminta</th>
+                            <th>Nama Penyetuju1</th>
+                            <th>Nama Penyetuju2</th>
+                            <th>Ada Detil</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="headerModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id='formHeader'>
+                <div class="modal-body">
+                    <div class="form-group" id="divKodeSPR" style="display:none">
+                        <label for="kodeSPR" class="">Kode SPR:</label>
+                        <input type="text" class="form-control" id="kodeSPR">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="">Zona:</label>
+                        <select class="custom-select" id="zona">
+                            <option value="000" selected>All</option>
+                        </select>
+                        @*<input type="text" class="form-control" id="zona">*@
+                    </div>
+                    <div class="form-group">
+                        <label for="TujuanSPR" class="">Tujuan SPR:</label>
+                        <textarea class="form-control" id="tujuanSPR"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="peminta" class="">Nama Peminta<span style="color:red">*</span> :</label>
+                        <input type="text" class="form-control" id="peminta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="penyetuju1" class="">Nama Penyetuju 1:</label>
+                        <input type="text" class="form-control" id="penyetuju1">
+                    </div>
+                    <div class="form-group">
+                        <label for="penyetuju2" class="">Nama Penyetuju 2:</label>
+                        <input type="text" class="form-control" id="penyetuju2">
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="">status:</label>
+                        <select class="custom-select" id="status">
+                            <option value="1" selected>Aktif</option>
+                            <option value="0">Tidak Aktif</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input id="btnSave" type="submit" value="Save" data-id="" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/js/Header.js"></script>
