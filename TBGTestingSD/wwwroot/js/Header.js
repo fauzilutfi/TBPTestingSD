@@ -139,6 +139,16 @@ var table = {
     rebind: function () {
         var table = $("#tblHeader").dataTable({
             destroy: true,
+            searching: false,
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                    }
+                }
+            ],
             data: _dataList,
             columns: [
                 { 'data': 'kodeSpr' },
@@ -174,7 +184,10 @@ var table = {
                         return strHrml;
                     }
                 }
-            ]
+            ],
+            drawCallback: function () {
+                $('.dt-button').text('Export to excel').addClass('btn btn-primary');
+            }
 
         })
     },
@@ -183,7 +196,9 @@ var table = {
 var filter = {
     init: function () {
         filter.getPenyetujuan();
-        filter.reset();
+        $("#btnReset").on('click', function () {
+            filter.reset();
+        });
         $('#formFilter').submit(function (e) {
             filter.search();
             e.preventDefault();
@@ -227,7 +242,7 @@ var filter = {
             type: 'json',
             success: function (obj, textStatus) {
                 _dataList = obj;
-                //console.log(_dataList);
+                console.log(_dataList);
                 table.rebind();
             },
             error: function (obj, textStatus) {

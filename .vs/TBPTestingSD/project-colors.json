@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "390bd868-d084-4c78-bffe-9aa8d2fdd23f": {
+      "ProjectGuid": "390bd868-d084-4c78-bffe-9aa8d2fdd23f",
+      "DisplayName": "TBGTestingSD",
+      "ColorIndex": 0
+    },
+    "ce1d36af-18bf-44e4-8daa-3cf8384d6136": {
+      "ProjectGuid": "ce1d36af-18bf-44e4-8daa-3cf8384d6136",
+      "DisplayName": "RepositoryLayer",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
